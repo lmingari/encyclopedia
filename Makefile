@@ -22,9 +22,9 @@ RM=/bin/rm
 
 PANDOC=/usr/bin/pandoc
 
-PANDOC_OPTIONS=--standalone --citeproc
+PANDOC_OPTIONS=--standalone --citeproc 
 
-PANDOC_HTML_OPTIONS=--to html5
+PANDOC_HTML_OPTIONS=--to html5 --webtex
 PANDOC_PDF_OPTIONS=
 PANDOC_DOCX_OPTIONS=
 PANDOC_RTF_OPTIONS=
