@@ -12,12 +12,17 @@ During the last decade, most of the studies on numerical modelling of volcanic a
 $$ \tau = \rho_a u_*^2 $$
 where $\rho_a$ is the air density and $u_*$ is the so-called friction velocity. Dust emission is a nonlinear process and experimental studies and semi-empirical models have shown that the vertical emission flux can be expressed as 
 $$ F_v \sim u_*^n $$
-in the limit $u_* \gg u_{*t}$ with the exponent ranging between 2 and 5, approximately. Additionally, an expression for the threshold must be provided to ensure a closed system of equations. The wind erosion threshold friction velocity can be computed using the classical expression derived by @bagnold1941 in the limit of large particle:
-$$ u_{*t} \propto \sqrt{ \dfrac{\rho_p}{\rho} d } $$
-being $\rho_p$ the particle density, $\rho_a$ the air density and $d$ is the grain size. However, this expression is not valid for small particles since it does not take into account the effect of interparticle cohesive forces. @shao2000 proposed a more realistic expression for spherical particles loosely spread over a dry and bare surface idealized soils which can be applied to multiple grain sizes. This expression depends on a single experimental parameter $\gamma$ and has been extensively used in numerical models (Fig. 1). This expression of the threshold $u_{*ts}$ for idealized bare and dry soils needs to be corrected taking into account multiple effects, including soil moisture and surface roughness. The expression 
-$$ u_{*t} = u_{*ts} * f_w * f_\lambda * \dots $$
-apply correction depending on soil moisture ($f_w>1$) and surface roughness
-($f_\lambda>1$) in order to correct the threshold $u_{*ts}$ for idealized bare and dry surfaces.
+in the limit $u_* \gg u_{*t}$ with the exponent ranging between 2 and 5, approximately. 
+
+Additionally, an expression for the threshold must be provided to ensure a closed system of equations. In the limit of large particles, the wind erosion threshold friction velocity can be computed using the well-known expression derived by @bagnold1941: 
+$$ u_{*t}^2 \propto \sigma_p g d $$
+being $\sigma_p=\rho_p/\rho_a$ the particle-to-air density ratio, $g$ the acceleration of gravity and $d$ is the grain size. However, for small particles $u_{*t}$ increases rapidly with decreasing $d$ and this expression is not valid since it does not take into account the effect of interparticle cohesive forces. @shao2000 derived a more realistic expression for spherical particles loosely spread over a dry and bare surface which can be applied to multiple grain sizes:
+$$ u_{*ts}^2 \propto \sigma_p g d + \dfrac{\gamma}{\rho_a d} $$
+This expression depends on an experimental parameter $\gamma$ and has been extensively used in numerical models (Fig. 1). According to some numerical studies, a well-suited value of $\gamma$ for fresh volcanic deposits is around $\gamma \sim 1.65 \times 10^{-4}~kg~s^{-2}$, while $\gamma \gtrsim 3 \times 10^{-4}~kg~s^{-2}$ is a reasonable assumption for ancient deposits.
+
+The expression of $u_{*ts}$ for idealized bare and dry soils needs to be corrected taking into account multiple factors, including soil moisture and the influence of nonerodible surface roughness elements. The general expression
+$$ u_{*t} = u_{*ts} f(w,\lambda,\dots) $$
+provides a simple approach to evaluate the threshold friction velocity for natural surfaces using a correction function ($f>1$) accounting for the increase of the threshold due to the influence of soil moisture ($w$), the density of surface-roughness elements ($\lambda$), among other factors.
 
 ![Figure 1: dofksd](scripts/ust_th.png)
 
