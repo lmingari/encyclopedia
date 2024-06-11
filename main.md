@@ -20,28 +20,13 @@ being $\sigma_p=\rho_p/\rho_a$ the particle-to-air density ratio, $g$ the accele
 $$ u_{*ts}^2 \propto \sigma_p g d + \dfrac{\gamma}{\rho_a d} $$
 This expression depends on an experimental parameter $\gamma$ and has been extensively used in numerical models (Fig. 1). According to some numerical studies, a well-suited value of $\gamma$ for fresh volcanic deposits is around $\gamma \sim 1.65 \times 10^{-4}~kg~s^{-2}$, while $\gamma \gtrsim 3 \times 10^{-4}~kg~s^{-2}$ is a reasonable assumption for ancient deposits.
 
-The expression of $u_{*ts}$ for idealized bare and dry soils needs to be corrected taking into account multiple factors, including soil moisture and the influence of nonerodible surface roughness elements. The general expression
+The expression of $u_{*ts}$ for idealised bare and dry soils needs to be corrected taking into account multiple factors, including soil moisture and the influence of nonerodible surface roughness elements. The general expression
 $$ u_{*t} = u_{*ts} f(w,\lambda,\dots) $$
 provides a simple approach to evaluate the threshold friction velocity for natural surfaces using a correction function ($f>1$) accounting for the increase of the threshold due to the influence of soil moisture ($w$), the density of surface-roughness elements ($\lambda$), among other factors.
 
-![Figure 1: dofksd](scripts/ust_th.png)
+A realistic representation of the spatial distribution of emission sources for ash resuspension requires robust weather and land-surface data. The NWP model provides the atmospheric variables needed by the emission scheme, including air density and friction velocity. Specifically, the friction velocity can be computed by the surface layer scheme included within the NWP model or estimated from the wind profile or even from the surface wind using empirical parameterisations. On the other hand, the land-surface model provides critical information required to estimate the erosion threshold, such as volumetric or gravimetric soil moisture, roughness length or vegetation cover fraction, etc... Typically, NWP models include a LSM to represent land processes and provide heat and moisture fluxes over land surface to the parent atmospheric model. However, the land-surface information provided by most of the available regional NWP models and global datasets (e.g., ERA5 reanalysis or GFS) is not representative of the land-surface conditions and spatial scales involved in the ash emission process. In addition, the LSM does not generally include information related to the tephra fallout deposit and, consequently, is the weakest link in the ash resuspension modelling system as an ad hoc land-surface model is required to obtain crucial information for the ash emission scheme.
 
-
-# Basura
-Realistic forecasting of ash clouds requires robust meteorological and source-term data. Online VATD models are coupled with Numerical Weather Prediction (NWP) models according to an integrated modelling system that enables a two-way data exchange of data. However, online modelling systems are extremely demanding in terms of computational resources because of the complexity of NWP models, which can be a significant limitation for operational systems. Alternatively, some VATD models are run separately following an offline approach and allow exclusively a one-way coupling of the meteorology. The offline coupling has low computational cost since VATD models can benefit from already available meteorological data provided by weather agencies. This approach is particularly well-suited to early warning systems with urgent computing needs whenever the response time is critical once an eruption has started. As a counterpart, the online approach represents the atmospheric processes more realistically and errors introduced by the offline approach can be significant in some cases. 
-
-
-
-
-# Satellite
-When remote-sensing data and observations from the ground
-and aircraft are available, these model predictions can be
-compared and validated. Before, and in the initial stages of
-volcanic eruptions, VATD models are invaluable in predicting
-the movement of volcanic ash clouds and ensuring aviation
-safety.
-
-* copiado 
+![Figure 1: Threshold friction velocity according to the expression derived by @shao2000 for soils with uniform and spherical particles spread loosely over a dry and bare surface. Under this ideal condition, the threshold can be expressed as a function of only particle size. As an example, the figure shows some typical values of the experimental parameter $\gamma$ considered in numerical studies of ash resuspension.](scripts/ust_th.png)
 
 # References
 
